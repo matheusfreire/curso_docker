@@ -1,0 +1,37 @@
+* Executar um container (completo, dando pull na imagem e rodando na sua máquina)
+    docker container run {imagem}
+
+* Executar um container em modo iterativo
+    docker container run -it {image}
+
+* Executar um container em modo iterativo e anexar ao terminal corrente
+    docker container run -ai {image}
+
+* Startar um container já baixado
+    docker container start {name}
+
+* Executar um container especificando sua porta interna e externa
+    docker container run -p {porta_externa}:{porta_interna} {image}
+
+* Executar uma container mudando uma pasta do container para apontar para uma pasta local
+    docker container run -p -p {porta_externa}:{porta_interna} -v {caminho_interno}:{caminho_externo} {image}
+
+
+Criar uma nova imagem
+    * docker image build -t {name}
+
+Cria uma nova imagem com argumento
+    * docker image build --build-arg {argumento}={valor_argumento} -t {name}
+
+Indicar uma rede para a imagem ao rodar
+    --net none|bridge|host
+
+Criar uma nova rede
+    docker network create --driver {bridge} {rede_nova}
+
+Colocar um container numa rede que seja a sua
+    docker network connect {rede} container3
+
+Desconectar um container de uma rede
+    docker network disconnect {rede} {container}
+
