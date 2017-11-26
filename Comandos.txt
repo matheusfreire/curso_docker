@@ -22,6 +22,7 @@ Criar uma nova imagem
 
 Cria uma nova imagem com argumento
     * docker image build --build-arg {argumento}={valor_argumento} -t {name}
+O & significa que vários comandos estão sendo concatenados na hora de criar uma imagem
 
 Indicar uma rede para a imagem ao rodar
     --net none|bridge|host
@@ -34,4 +35,7 @@ Colocar um container numa rede que seja a sua
 
 Desconectar um container de uma rede
     docker network disconnect {rede} {container}
+
+Escalar um container (dentro do docker-compose)
+    docke-compose up -d --scale {container}={quantidade}
 
